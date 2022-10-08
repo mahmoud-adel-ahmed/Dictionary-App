@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  max-width: 100%;
+}
+
+html {
+  font-size: clamp(0.7rem, 0.5vw + 8px, 0.5rem + 8px);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h3 {
+  color: #16194c;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 90vmin;
+  background: #fff;
+  padding: 80px 50px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
+  @media screen and (max-width: 28.125em) {
+    padding: 40px 20px;
+  }
+  .search-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    input {
+      flex-basis: 75%;
+      border-bottom: 3px solid #fee140;
+      padding: 5px;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      @media screen and (max-width: 28.125em) {
+        flex-basis: 100%;
+      }
+    }
+    button {
+      padding: 5px 0;
+      flex-basis: 20%;
+      font-size: 1.1rem;
+      background-color: #fee140;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+  .result {
+    .word {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      h3 {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+      }
+      button {
+        background: transparent;
+        font-size: 17px;
+        color: #fee140;
+        align-self: center;
+      }
+    }
+    .details {
+      display: flex;
+      gap: 1rem;
+      color: #b3b6d4;
+      margin-block: 15px;
+      font-size: 14px;
+    }
+    .word-meaning,
+    .word-example {
+      color: #575a7b;
+    }
+    .word-example {
+      border-left: 5px solid #fee140;
+      padding-left: 15px;
+      margin-top: 20px;
+    }
+    .error {
+      margin-top: 60px;
+      text-align: center;
+      .far {
+        color: #fe7640;
+      }
+    }
+  }
+}
