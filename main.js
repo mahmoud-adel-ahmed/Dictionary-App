@@ -4,8 +4,8 @@ let resultContainer = document.querySelector(".result");
 let sound = document.getElementById("sound");
 
 let url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-resultContainer.innerHTML = "";
 
+resultContainer.innerHTML = "";
 searchBtn.addEventListener("click", async function () {
   let word = input.value;
   try {
@@ -24,16 +24,13 @@ searchBtn.addEventListener("click", async function () {
               data[0].meanings[0]?.partOfSpeech ||
               data[0].meanings[1]?.partOfSpeech
             }</p>
-            <p>${data[0].phonetic}</p>
+            <p>${data[0].phonetic || ""}</p>
         </div>
         <p class="word-meaning">
             ${data[0].meanings[0].definitions[0].definition}
         </p>
         <p class="word-example">
-            ${
-              data[0].meanings[0].definitions[0].example ||
-              `${word} is an English word`
-            }    
+            ${data[0].meanings[0].definitions[0].example || ""}    
         </p>
    `;
     sound.setAttribute(
